@@ -9,7 +9,6 @@ export default function PriceDetails() {
   const calculatedPrice = cart.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity;
   }, 0);
-  console.log(cart);
 
   return (
     cart.length > 0 && (
@@ -22,7 +21,7 @@ export default function PriceDetails() {
         </div>
         <div className="price-detail-flex">
           <p>Discount</p>
-          <p>₹500</p>
+          <p>-₹500</p>
         </div>
         <div className="price-detail-flex">
           <p>Delivery Charge</p>

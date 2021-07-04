@@ -16,12 +16,14 @@ export const reducer = (state, { type, payload }) => {
         cart: state.cart.filter((item) => item.id !== payload.id),
       };
     case "CHANGE_QUANTITY":
-      let cartItems = state.cart.filter((item) => item.id !== payload.item.id);
-      cartItems = cartItems.concat({
-        ...payload.item,
-        quantity: payload.quantity,
-      });
-      return { ...state, cart: cartItems };
+      return {
+        ...state,
+        cart: state.cart.map((item) =>
+          item.id === payload.item.id
+            ? { ...item, quantity: payload.quantity }
+            : item
+        ),
+      };
     case "INCREMENT_QUANTITY":
       return {
         ...state,
