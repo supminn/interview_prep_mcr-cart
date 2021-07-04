@@ -19,7 +19,7 @@ export const reducer = (state, { type, payload }) => {
       return {
         ...state,
         cart: state.cart.map((item) =>
-          item.id === payload.item.id
+          item.id === payload.item.id && payload.quantity > 0
             ? { ...item, quantity: payload.quantity }
             : item
         ),

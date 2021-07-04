@@ -46,18 +46,23 @@ export default function SavedItem({ item }) {
       <div className="txt-container">
         <span className="name">{item.name}</span>
         <span className="txt-light">Size: {item.size}</span>
-        <button
-          className="btn-navigate"
-          onClick={() => dispatch({ type: "MOVE_TO_CART", payload: item })}
-        >
-          Move to Cart
-        </button>
-        <button
-          className="btn-navigate"
-          onClick={() => dispatch({ type: "REMOVE_FROM_SAVED", payload: item })}
-        >
-          Remove
-        </button>
+        <b>₹{item.price}</b>
+        <div>
+          <button
+            className="btn-navigate"
+            onClick={() => dispatch({ type: "MOVE_TO_CART", payload: item })}
+          >
+            Move to Cart
+          </button>
+          <button
+            className="btn-navigate"
+            onClick={() =>
+              dispatch({ type: "REMOVE_FROM_SAVED", payload: item })
+            }
+          >
+            Remove
+          </button>
+        </div>
       </div>
     </div>
   );

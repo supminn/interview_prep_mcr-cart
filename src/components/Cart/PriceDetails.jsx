@@ -21,7 +21,7 @@ export default function PriceDetails() {
         </div>
         <div className="price-detail-flex">
           <p>Discount</p>
-          <p>-₹500</p>
+          <p>-₹100</p>
         </div>
         <div className="price-detail-flex">
           <p>Delivery Charge</p>
@@ -29,7 +29,7 @@ export default function PriceDetails() {
         </div>
         <div className="price-detail-flex text-bold">
           <p>Total Amount</p>
-          <p>₹{parseInt(calculatedPrice) - 500}</p>
+          <p>₹{parseInt(calculatedPrice) - 100}</p>
         </div>
       </div>
     )

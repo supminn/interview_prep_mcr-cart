@@ -1,12 +1,13 @@
 .btn-order {
     color: var(--white);
     background-color: var(--orange-shade);
-
+    float:right;
 }
 
 .cartItem-container,
 .saved-container {
-    border: 1px solid black;
+    box-shadow: 1px 1px 5px black;
+    padding: 0.5rem;
 }
 
 .cart-card,
@@ -14,6 +15,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cart-card {
+    border: 1px solid rgb(110, 110, 110);
 }
 
 .image-container {
@@ -71,15 +76,15 @@
     justify-content: space-between;
 }
 
-.text-bold{
+.text-bold {
     font-weight: bold;
     font-size: large;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; 
+    margin: 0;
 }

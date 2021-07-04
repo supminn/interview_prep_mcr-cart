@@ -23,7 +23,7 @@ export default function CartItem({ item }) {
             onChange={(e) =>
               dispatch({
                 type: "CHANGE_QUANTITY",
-                payload: { item: item, quantity: e.target.value },
+                payload: { item: item, quantity: parseInt(e.target.value) },
               })
             }
             type="number"
@@ -43,18 +43,24 @@ export default function CartItem({ item }) {
       <div className="txt-container">
         <span className="name">{item.name}</span>
         <span className="txt-light">Size: {item.size}</span>
-        <button
-          className="btn-navigate"
-          onClick={() => dispatch({ type: "SAVE_LATER", payload: item })}
-        >
-          Save for Later
-        </button>
-        <button
-          className="btn-navigate"
-          onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: item })}
-        >
-          Remove
-        </button>
+        <b>₹{item.price}</b>
+        <div>
+          {" "}
+          <button
+            className="btn-navigate"
+            onClick={() => dispatch({ type: "SAVE_LATER", payload: item })}
+          >
+            Save for Later
+          </button>
+          <button
+            className="btn-navigate"
+            onClick={() =>
+              dispatch({ type: "REMOVE_FROM_CART", payload: item })
+            }
+          >
+            Remove
+          </button>
+        </div>
       </div>
     </div>
   );
